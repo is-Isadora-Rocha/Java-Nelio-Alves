@@ -16,7 +16,7 @@ public class DolarMain {
         System.out.println("How many dollars will be bought?");
         double dollars = sc.nextDouble();
 
-        double real = CurrencyConverter.convertDolar(price, dollars);
+        double real = CurrencyConverter.convertDolartoReal(price, dollars);
 
         System.out.printf("Amount to be paid in reais: " + real);
     }
