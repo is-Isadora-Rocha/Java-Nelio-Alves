@@ -12,16 +12,11 @@ public class Banco {
         this.initDeposit = initDeposit;
     }
 
-    public Banco(int quantity) {
-    }
+    public Banco(int quantity) {}
 
-    public Banco() {
+    public Banco() {}
 
-    }
-
-    public int getAcount() {
-        return acount;
-    }
+    public int getAcount() { return acount; }
 /*
     ## Inativo pois não pode ser alterado ##
    public void setAcount(int acount) {
@@ -29,9 +24,7 @@ public class Banco {
     }
 */
 
-    public String getName() {
-        return name;
-    }
+    public String getName() { return name; }
 
     public void setName(String name) {
         this.name = name;

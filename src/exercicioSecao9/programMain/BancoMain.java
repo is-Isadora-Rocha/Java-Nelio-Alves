@@ -1,5 +1,6 @@
 package exercicioSecao9.programMain;
 
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -21,35 +22,45 @@ public class BancoMain {
                     + "5. Exit\n");
 
             option = sc.nextInt();
+            sc.nextLine(); // Consumir a quebra de linha pendente
 
-            switch (option) {
-                case 1:
-                    createAccount();
-                    System.out.println("returning to the menu...");
-                    break;
-                case 2:
-                    depositAccount();
-                    System.out.println("returning to the menu...");
-                    break;
-                case 3:
-                    withdrawValue();
-                    System.out.println("returning to the menu...");
-                    break;
-                case 4:
-                    editAccountName();
-                    System.out.println("returning to the menu...");
-                    break;
-                case 5:
-                    System.out.println("Goodbye!");
-                    break;
-                default:
-                    System.out.println("Opção inválida!");
-                    break;
+            try {
+
+                switch (option) {
+                    case 1:
+                        createAccount(sc);
+                        System.out.println("returning to the menu...");
+                        break;
+                    case 2:
+                        depositAccount(sc);
+                        System.out.println("returning to the menu...");
+                        break;
+                    case 3:
+                        withdrawValue(sc);
+                        System.out.println("returning to the menu...");
+                        break;
+                    case 4:
+                        editAccountName(sc);
+                        System.out.println("returning to the menu...");
+                        break;
+                    case 5:
+                        System.out.println("Goodbye!");
+                        break;
+                    default:
+                        System.out.println("Invalid option! Please enter a number between 1 and 5.");
+                        break;
+                }
+            } catch (InputMismatchException e) {
+                // exceção que ocorre quando o tipo de dados fornecido pelo usuário não corresponde
+                // ao tipo de dados esperado pelo método de entrada
+                System.out.println("Invalid input! Please enter a number");
+                sc.nextLine();
+                option = 0;
             }
-        } while (option != 5);
+        }
+        while (option != 5);
 
         sc.close();
     }
-
 
 }

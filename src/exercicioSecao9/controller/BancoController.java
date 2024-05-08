@@ -7,15 +7,39 @@ import java.util.Scanner;
 
 public class BancoController {
 
-    public static void createAccount(){
-        Scanner sc = new Scanner(System.in);
+    public static void createAccount(Scanner sc){
         System.out.println("##############");
         System.out.print("Enter account number: ");
         int account = sc.nextInt();
+        //limpar buffer de entrada / consumir a quebra de linha pendente
+        sc.nextLine();
+
+        boolean isValid = false;
+
+        do {
+            if (sc.hasNextInt()) {
+                account = sc.nextInt();
+                sc.nextLine(); //limpar buffer de entrada
+
+                if (String.valueOf(account).length() == 4){
+                    isValid = true;
+                } else {
+                    System.out.println("Invalid account number! Please enter a 4-digit number");
+                    System.out.print("Enter account number (4 digits): ");
+                }
+            } else {
+                System.out.println("Invalid input! Please enter a valid 4-digit number.");
+                sc.nextLine(); // Limpar o buffer de entrada
+                System.out.print("Enter account number (4 digits): ");
+            }
+        } while (!isValid);
+
         System.out.print("Enter account holder: ");
         String name = sc.nextLine();
+
         System.out.print("Is there na initial deposit (y/n)?");
         String choose = sc.nextLine();
+
         double initDeposit = 0;
         if (Objects.equals(choose, "y")) {
             System.out.println("Enter initial deposit value: ");
@@ -34,8 +58,7 @@ public class BancoController {
         sc.close();
     }
 
-    public static void depositAccount(){
-        Scanner sc = new Scanner(System.in);
+    public static void depositAccount(Scanner sc){
         System.out.print("Deposit value into your account\n"
                 + "Enter deposite value: "
         );
@@ -50,8 +73,7 @@ public class BancoController {
         sc.close();
     }
 
-    public static void withdrawValue(){
-        Scanner sc = new Scanner(System.in);
+    public static void withdrawValue(Scanner sc){
         System.out.print("Withdraw value into your account\n"
                 + "Enter value: "
         );
@@ -66,9 +88,8 @@ public class BancoController {
         sc.close();
     }
 
-    public static void editAccountName(){
+    public static void editAccountName(Scanner sc){
         Banco banco = new Banco();
-        Scanner sc = new Scanner(System.in);
         System.out.println("Your current name: " + banco.getName());
         System.out.print("Enter name to change: ");
         String newName = sc.nextLine();
