@@ -1,6 +1,6 @@
-package application;
+package metodos_estaticos.application;
 
-import util.Calculator;
+import metodos_estaticos.application.util.Calculator;
 
 import java.util.Locale;
 import java.util.Scanner;

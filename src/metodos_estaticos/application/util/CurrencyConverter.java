@@ -1,4 +1,4 @@
-package util;
+package metodos_estaticos.application.util;
 
 public class CurrencyConverter {
 

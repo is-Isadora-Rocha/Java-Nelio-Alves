@@ -1,4 +1,4 @@
-package util;
+package metodos_estaticos.application.util;
 
 public class Calculator {
     public static final double PI = 3.14159;

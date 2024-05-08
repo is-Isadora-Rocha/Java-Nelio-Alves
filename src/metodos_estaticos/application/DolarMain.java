@@ -1,6 +1,6 @@
-package application;
+package metodos_estaticos.application;
 
-import util.CurrencyConverter;
+import metodos_estaticos.application.util.CurrencyConverter;
 
 import java.util.Locale;
 import java.util.Scanner;
