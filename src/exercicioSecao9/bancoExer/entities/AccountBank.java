@@ -1,20 +1,20 @@
-package exercicioSecao9.entities;
+package exercicioSecao9.bancoExer.entities;
 
-public class Banco {
+public class AccountBank {
     private int acount;
     private String name;
     private double initDeposit;
     private int quantity;
 
-    public Banco(int acount, String name, double initDeposit) {
+    public AccountBank(int acount, String name, double initDeposit) {
         this.acount = acount;
         this.name = name;
         this.initDeposit = initDeposit;
     }
 
-    public Banco(int quantity) {}
+    public AccountBank(int quantity) {}
 
-    public Banco() {}
+    public AccountBank() {}
 
     public int getAcount() { return acount; }
 /*

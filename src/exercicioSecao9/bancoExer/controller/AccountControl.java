@@ -1,18 +1,16 @@
-package exercicioSecao9.controller;
+package exercicioSecao9.bancoExer.controller;
 
-import exercicioSecao9.entities.Banco;
+import exercicioSecao9.bancoExer.entities.AccountBank;
 
 import java.util.Objects;
 import java.util.Scanner;
 
-public class BancoController {
+public class AccountControl {
 
     public static void createAccount(Scanner sc){
         System.out.println("##############");
         System.out.print("Enter account number: ");
-        int account = sc.nextInt();
-        //limpar buffer de entrada / consumir a quebra de linha pendente
-        sc.nextLine();
+        int account = 0;
 
         boolean isValid = false;
 
@@ -25,12 +23,10 @@ public class BancoController {
                     isValid = true;
                 } else {
                     System.out.println("Invalid account number! Please enter a 4-digit number");
-                    System.out.print("Enter account number (4 digits): ");
                 }
             } else {
                 System.out.println("Invalid input! Please enter a valid 4-digit number.");
                 sc.nextLine(); // Limpar o buffer de entrada
-                System.out.print("Enter account number (4 digits): ");
             }
         } while (!isValid);
 
@@ -41,18 +37,18 @@ public class BancoController {
         String choose = sc.nextLine();
 
         double initDeposit = 0;
-        if (Objects.equals(choose, "y")) {
+        if (Objects.equals(choose, "y")) { //char response = sc.next().chatAt(0)
             System.out.println("Enter initial deposit value: ");
             initDeposit = sc.nextDouble();
         }
         System.out.println("##############");
 
-        Banco banco = new Banco(account, name, initDeposit);
+        AccountBank accountBank = new AccountBank(account, name, initDeposit);
 
         System.out.println("Account data: ");
-        System.out.println("Account" + banco.getAcount()
-                + "\n" + "Holder: " + banco.getName()
-                + "\n" + "Balance: " + banco.getInitDeposit()
+        System.out.println("Account" + accountBank.getAcount()
+                + "\n" + "Holder: " + accountBank.getName()
+                + "\n" + "Balance: " + accountBank.getInitDeposit()
         );
         System.out.println("##############");
         sc.close();
@@ -64,11 +60,11 @@ public class BancoController {
         );
         int quantity = 0;
 
-        Banco banco = new Banco(quantity);
+        AccountBank accountBank = new AccountBank(quantity);
         quantity = sc.nextInt();
-        banco.addDeposit(quantity);
+        accountBank.addDeposit(quantity);
 
-        System.out.println("Update bank: " + banco);
+        System.out.println("Update bank: " + accountBank);
 
         sc.close();
     }
@@ -79,21 +75,21 @@ public class BancoController {
         );
         int quantity = 0;
 
-        Banco banco = new Banco(quantity);
+        AccountBank accountBank = new AccountBank(quantity);
         quantity = sc.nextInt();
-        banco.withdrawDeposit(quantity);
+        accountBank.withdrawDeposit(quantity);
 
-        System.out.println("Update bank: " + banco);
+        System.out.println("Update bank: " + accountBank);
 
         sc.close();
     }
 
     public static void editAccountName(Scanner sc){
-        Banco banco = new Banco();
-        System.out.println("Your current name: " + banco.getName());
+        AccountBank accountBank = new AccountBank();
+        System.out.println("Your current name: " + accountBank.getName());
         System.out.print("Enter name to change: ");
         String newName = sc.nextLine();
-        banco.setName(newName);
+        accountBank.setName(newName);
 
         sc.close();
     }

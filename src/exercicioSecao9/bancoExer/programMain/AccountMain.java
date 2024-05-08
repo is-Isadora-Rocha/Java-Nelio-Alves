@@ -1,12 +1,12 @@
-package exercicioSecao9.programMain;
+package exercicioSecao9.bancoExer.programMain;
 
 import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
-import static exercicioSecao9.controller.BancoController.*;
+import static exercicioSecao9.bancoExer.controller.AccountControl.*;
 
-public class BancoMain {
+public class AccountMain {
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
