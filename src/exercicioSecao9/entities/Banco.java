@@ -15,6 +15,10 @@ public class Banco {
     public Banco(int quantity) {
     }
 
+    public Banco() {
+
+    }
+
     public int getAcount() {
         return acount;
     }

@@ -17,7 +17,7 @@ public class BancoMain {
                     + "1. Create new account\n"
                     + "2. Deposit to your account\n"
                     + "3. Withdraw value to your account\n"
-                    + "4. Edit account\n"
+                    + "4. Edit account name\n"
                     + "5. Exit\n");
 
             option = sc.nextInt();
@@ -36,10 +36,17 @@ public class BancoMain {
                     System.out.println("returning to the menu...");
                     break;
                 case 4:
-
-
+                    editAccountName();
+                    System.out.println("returning to the menu...");
+                    break;
+                case 5:
+                    System.out.println("Goodbye!");
+                    break;
+                default:
+                    System.out.println("Opção inválida!");
+                    break;
             }
-        } while (option != 3);
+        } while (option != 5);
 
         sc.close();
     }

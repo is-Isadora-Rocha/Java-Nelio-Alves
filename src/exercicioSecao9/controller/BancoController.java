@@ -65,4 +65,15 @@ public class BancoController {
 
         sc.close();
     }
+
+    public static void editAccountName(){
+        Banco banco = new Banco();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Your current name: " + banco.getName());
+        System.out.print("Enter name to change: ");
+        String newName = sc.nextLine();
+        banco.setName(newName);
+
+        sc.close();
+    }
 }
