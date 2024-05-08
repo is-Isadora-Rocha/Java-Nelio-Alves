@@ -1,13 +1,9 @@
 package exercicioSecao9.programMain;
 
 import java.util.Locale;
-import java.util.Objects;
 import java.util.Scanner;
-import exercicioSecao9.entities.Banco;
-import exercicioSecao9.controller.BancoController;
 
-import static exercicioSecao9.controller.BancoController.createAccount;
-import static exercicioSecao9.controller.BancoController.depositAccount;
+import static exercicioSecao9.controller.BancoController.*;
 
 public class BancoMain {
     public static void main(String[] args) {
@@ -16,29 +12,31 @@ public class BancoMain {
 
         int option;
 
-//        int account = 0;
-//        String name = null;
-//        double initDeposit = 0;
-
-        //Banco banco = new Banco(account, name, initDeposit);
-
         do {
             System.out.println("Your Bank \n"
                     + "1. Create new account\n"
                     + "2. Deposit to your account\n"
                     + "3. Withdraw value to your account\n"
-                    + "4. Edit account"
-                    + "5. Exit");
+                    + "4. Edit account\n"
+                    + "5. Exit\n");
 
             option = sc.nextInt();
 
             switch (option) {
                 case 1:
                     createAccount();
+                    System.out.println("returning to the menu...");
                     break;
                 case 2:
                     depositAccount();
+                    System.out.println("returning to the menu...");
                     break;
+                case 3:
+                    withdrawValue();
+                    System.out.println("returning to the menu...");
+                    break;
+                case 4:
+
 
             }
         } while (option != 3);

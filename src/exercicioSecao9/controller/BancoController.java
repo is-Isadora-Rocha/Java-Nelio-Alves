@@ -9,6 +9,7 @@ public class BancoController {
 
     public static void createAccount(){
         Scanner sc = new Scanner(System.in);
+        System.out.println("##############");
         System.out.print("Enter account number: ");
         int account = sc.nextInt();
         System.out.print("Enter account holder: ");
@@ -20,6 +21,7 @@ public class BancoController {
             System.out.println("Enter initial deposit value: ");
             initDeposit = sc.nextDouble();
         }
+        System.out.println("##############");
 
         Banco banco = new Banco(account, name, initDeposit);
 
@@ -28,6 +30,7 @@ public class BancoController {
                 + "\n" + "Holder: " + banco.getName()
                 + "\n" + "Balance: " + banco.getInitDeposit()
         );
+        System.out.println("##############");
         sc.close();
     }
 
@@ -35,6 +38,22 @@ public class BancoController {
         Scanner sc = new Scanner(System.in);
         System.out.print("Deposit value into your account\n"
                 + "Enter deposite value: "
+        );
+        int quantity = 0;
+
+        Banco banco = new Banco(quantity);
+        quantity = sc.nextInt();
+        banco.addDeposit(quantity);
+
+        System.out.println("Update bank: " + banco);
+
+        sc.close();
+    }
+
+    public static void withdrawValue(){
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Withdraw value into your account\n"
+                + "Enter value: "
         );
         int quantity = 0;
 

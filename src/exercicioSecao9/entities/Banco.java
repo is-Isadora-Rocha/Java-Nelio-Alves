@@ -18,10 +18,12 @@ public class Banco {
     public int getAcount() {
         return acount;
     }
-//  Inativo pois não pode ser alterado
-//   public void setAcount(int acount) {
-//        this.acount = acount;
-//    }
+/*
+    ## Inativo pois não pode ser alterado ##
+   public void setAcount(int acount) {
+        this.acount = acount;
+    }
+*/
 
     public String getName() {
         return name;
@@ -42,10 +44,13 @@ public class Banco {
     public int getQuantity() {
         return quantity;
     }
-//  Inativo para proteger o obj Banco de inserções de quantidade
-//    public void setQuantity(int quantity) {
-//        this.quantity = quantity;
-//    }
+/*
+    ## Inativo para proteger o obj Banco de inserções de quantidade ##
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+*/
 
     public void addDeposit(int quantity) {
         this.quantity += quantity;
