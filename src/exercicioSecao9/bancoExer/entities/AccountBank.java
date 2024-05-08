@@ -1,67 +1,54 @@
 package exercicioSecao9.bancoExer.entities;
 
 public class AccountBank {
-    private int acount;
-    private String name;
-    private double initDeposit;
-    private int quantity;
 
-    public AccountBank(int acount, String name, double initDeposit) {
-        this.acount = acount;
-        this.name = name;
-        this.initDeposit = initDeposit;
+    private int numAccount;
+    private String holder;
+    private double balance;
+
+    public AccountBank() {
     }
 
-    public AccountBank(int quantity) {}
-
-    public AccountBank() {}
-
-    public int getAcount() { return acount; }
-/*
-    ## Inativo pois não pode ser alterado ##
-   public void setAcount(int acount) {
-        this.acount = acount;
-    }
-*/
-
-    public String getName() { return name; }
-
-    public void setName(String name) {
-        this.name = name;
+    public AccountBank(int numAccount, String holder) {
+        this.numAccount = numAccount;
+        this.holder = holder;
     }
 
-    public double getInitDeposit() {
-        return initDeposit;
+    // se o user optar depositar quando criar a conta
+    public AccountBank(int numAccount, String holder, double balance) {
+        this.numAccount = numAccount;
+        this.holder = holder;
+        this.balance = balance;
     }
 
-    public void setInitDeposit(double initDeposit) {
-        this.initDeposit = initDeposit;
+    public int getNumAccount() {
+        return numAccount;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public String getHolder() {
+        return holder;
     }
-/*
-    ## Inativo para proteger o obj Banco de inserções de quantidade ##
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setHolder(String holder) {
+        this.holder = holder;
     }
-*/
 
-    public void addDeposit(int quantity) {
-        this.quantity += quantity;
+    public double getBalance() {
+        return balance;
     }
-    public void withdrawDeposit(int quantity) {
-        this.quantity -= quantity;
+
+    public void deposit(double amount){
+        balance += amount;
+    }
+    public void withdraw(double amount){
+        balance -= amount + 5.0;
     }
 
     @Override
     public String toString() {
-        return "Banco{" +
-                "acount=" + acount +
-                ", name='" + name + '\'' +
-                ", initDeposit=" + initDeposit +
-                '}';
+        return "Account: "
+                + numAccount
+                + ", Holder: " + holder
+                + ", Balance: $ " + String.format("%.2f", balance);
     }
 }

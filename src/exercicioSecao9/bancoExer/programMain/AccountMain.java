@@ -40,7 +40,7 @@ public class AccountMain {
                         System.out.println("returning to the menu...");
                         break;
                     case 4:
-                        editAccountName(sc);
+                        editAccountholder(sc);
                         System.out.println("returning to the menu...");
                         break;
                     case 5:
