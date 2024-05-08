@@ -44,7 +44,7 @@ public class AccountControl {
         System.out.println(accountBank);
 
         System.out.println("##############");
-        sc.close();
+        
     }
 
     public static void depositAccount(Scanner sc){
@@ -56,7 +56,6 @@ public class AccountControl {
         accountBank.deposit(depositAmount);
         System.out.println("Updated account: " + accountBank);
 
-        sc.close();
     }
 
     public static void withdrawValue(Scanner sc){
@@ -67,7 +66,7 @@ public class AccountControl {
         double withdraw = sc.nextDouble();
         accountBank.withdraw(withdraw);
         System.out.println("Updated account: " + accountBank);
-        sc.close();
+        
     }
 
     public static void editAccountholder(Scanner sc){
@@ -76,7 +75,6 @@ public class AccountControl {
         System.out.print("Enter holder to change: ");
         String newholder = sc.nextLine();
         accountBank.setHolder(newholder);
-
-        sc.close();
+        
     }
 }
