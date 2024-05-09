@@ -1,5 +1,7 @@
 package exercicioSecao9.bancoExer.programMain;
 
+import exercicioSecao9.bancoExer.entities.AccountBank;
+
 import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
@@ -40,7 +42,7 @@ public class AccountMain {
                         System.out.println("returning to the menu...");
                         break;
                     case 4:
-                        editAccountholder(sc);
+                        editAccountholder(sc, new AccountBank());
                         System.out.println("returning to the menu...");
                         break;
                     case 5:
