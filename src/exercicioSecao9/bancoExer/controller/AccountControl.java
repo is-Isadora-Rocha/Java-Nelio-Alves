@@ -69,12 +69,12 @@ public class AccountControl {
         
     }
 
-    public static void editAccountholder(Scanner sc){
-        AccountBank accountBank = new AccountBank();
+    public static void editAccountholder(Scanner sc, AccountBank accountBank){
         System.out.println("Your current holder: " + accountBank.getHolder());
         System.out.print("Enter holder to change: ");
         String newholder = sc.nextLine();
         accountBank.setHolder(newholder);
+        System.out.println("Holder name updated successfully!");
         
     }
 }
